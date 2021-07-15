@@ -1505,6 +1505,7 @@ body.ie ._ibg img {
   }
 
   .icon-menu {
+    margin-left: 32px;
     display: block;
     position: relative;
     -webkit-box-flex: 0;
@@ -1554,6 +1555,12 @@ body.ie ._ibg img {
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
     bottom: calc(50% - 1px);
+  }
+}
+
+@media (max-width: 767.98px) and (max-width: 1270px) {
+  .icon-menu {
+    margin-left: calc(15px + 17 * ((100vw - 320px) / 950));
   }
 }
 
@@ -1640,6 +1647,14 @@ body.ie ._ibg img {
 }
 
  @media (max-width: 767.98px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 767.98px) and (max-width: 1270px){
 
 @supports (-webkit-appearance:none){
 
