@@ -622,6 +622,15 @@ textarea.input {
   text-align: center;
 }
 
+._flyImage._ibg {
+  opacity: 1;
+  position: fixed;
+  -webkit-transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
+  z-index: 100;
+}
+
 ._footer-title {
   font-weight: bold;
   font-size: 24px;
@@ -1414,8 +1423,96 @@ body.ie ._ibg img {
   font-size: 12px;
 }
 
+.cart-header__body {
+  background-color: #f4f5f7;
+  border: 1px solid #e0e0e0;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  padding: 15px;
+  width: 300px;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate(0px, 20px);
+      -ms-transform: translate(0px, 20px);
+          transform: translate(0px, 20px);
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+._active .cart-header__body {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
 .icon-menu {
   display: none;
+}
+
+.cart-list {
+  overflow: auto;
+  max-height: 200px;
+}
+
+.cart-list__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+  height: 100px;
+}
+
+.cart-list__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0px 0px 0px 10px;
+}
+
+.cart-list__title {
+  color: inherit;
+  font-weight: 600;
+  -webkit-transition: color 0.3s ease 0s;
+  -o-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+  margin: 0px 0px 0.3125em 0px;
+}
+
+.cart-list__quantity {
+  font-size: 14px;
+  argin: 0px 0px 0.3333333333em 0px;
+}
+
+.cart-list__delete {
+  color: red;
+  font-size: 14px;
+}
+
+.cart-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.cart-list__item:not(:last-child) {
+  margin: 0px 0px 15px 0px;
 }
 
 /* //Burger
@@ -1898,6 +1995,11 @@ body.ie ._ibg img {
   min-width: 245px;
 }
 
+.products__more._hold {
+  opacity: 0.2;
+  cursor: default;
+}
+
 .item-product {
   background-color: #f4f5f7;
   display: -webkit-box;
@@ -2036,6 +2138,11 @@ body.ie ._ibg img {
 
 .actions-product__button:not(:last-child) {
   margin: 0px 0px 24px 0px;
+}
+
+.actions-product__button._hold {
+  opacity: 0.2;
+  cursor: default;
 }
 
 .actions-product__link {
@@ -2373,6 +2480,10 @@ body.ie ._ibg img {
     transition: 0.3s;
   }
 
+  .cart-header__body {
+    top: 50px;
+  }
+
   .footer__body {
     display: block;
   }
@@ -2502,6 +2613,13 @@ body.ie ._ibg img {
 
   .menu__sub-link {
     font-size: 18px;
+  }
+
+  .cart-header__body {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
   }
 
   .icon-menu {
@@ -2655,6 +2773,14 @@ body.ie ._ibg img {
 
   .cart-header__icon:hover {
     color: #e89f71;
+  }
+
+  .cart-list__title:hover {
+    color: #e89f71;
+  }
+
+  .cart-list__delete:hover {
+    text-decoration: underline;
   }
 
   .contacts-footer__item:hover {
